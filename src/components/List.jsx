@@ -9,11 +9,11 @@ import { aggregatedCartSelector } from '../selectors/aggregatedCartSelector'
 import { ItemCollection } from '../models/Item'
 import { ItemListElement } from './ItemListElement'
 
-export const ListComponent = glamorous.div({
+const ListComponent = glamorous.div({
     flex: 3,
 })
 
-export const ListWrapper = glamorous.ul({
+const ListWrapper = glamorous.ul({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -34,7 +34,7 @@ export class List extends PureComponent {
     render() {
         return (
             <ListComponent>
-                <h4>Items</h4>
+                <h3>Items</h3>
                 <ListWrapper>
                     {this.props.items.map(item => <ItemListElement
                         key={item.id}

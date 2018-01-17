@@ -26,16 +26,27 @@ const List = glamorous.ul({
     padding: 0,
 })
 
-export const Line = glamorous.li({
+const Line = glamorous.li({
     display: 'flex',
     justifyContent: 'space-between',
 })
 
-export const LineColumn = glamorous.div(props => ({
+const LineColumn = glamorous.div(props => ({
     display: 'flex',
+    textTransform: 'uppercase',
     flex: props.flex || 1,
+    fontWeight: props.weight || 400,
     justifyContent: props.justifyContent || 'flex-end'
 }))
+
+const NewGameButton = glamorous.button({
+    fontWeight: 'bold',
+    width: '100%',
+    background: 'black',
+    color: 'white',
+    margin: '1em 0',
+    padding: '1em',
+})
 
 @connect(mapStateToProps, mapDispatchToProps)
 
@@ -43,16 +54,16 @@ export class PlayerItems extends PureComponent {
     render() {
         return (
             <Wrapper>
-                <h4>Player items</h4>
+                <h3>Player items</h3>
                 <List>
                     <Line>
-                        <LineColumn flex="2" justifyContent="flex-start">Item</LineColumn>
-                        <LineColumn>Qty</LineColumn>
-                        <LineColumn>Score</LineColumn>
+                        <LineColumn justifyContent="flex-start" weight="bold">Item</LineColumn>
+                        <LineColumn weight="bold">Qty</LineColumn>
+                        <LineColumn weight="bold">Score</LineColumn>
                     </Line>
                     {this.props.cart.map(item =>
-                    <Line>
-                        <LineColumn flex="2" justifyContent="flex-start">{item.name}</LineColumn>
+                    <Line key={item.id}>
+                        <LineColumn justifyContent="flex-start">{item.name}</LineColumn>
                         <LineColumn>{item.inCartAmount}</LineColumn>
                         <LineColumn>{item.points}</LineColumn>
                     </Line>)}
@@ -66,7 +77,7 @@ export class PlayerItems extends PureComponent {
                     {this.props.summary.basketPrice}
                 </div>
                 <div>
-                    <button onClick={this.props.resetGame}>New Game</button>
+                    <NewGameButton onClick={this.props.resetGame}>New Game</NewGameButton>
                 </div>
             </Wrapper>
         );
