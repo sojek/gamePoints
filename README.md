@@ -9,4 +9,4 @@ npm run start
 
 ## Demo
 
-Application is hosted on firebase. [Link to firebase live demo](https://game-points-ae3fe.firebaseapp.com/)
+Application is hosted on firebase. [Link to firebase live demo](https://game-points-b451c.firebaseapp.com/)
