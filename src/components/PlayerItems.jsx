@@ -46,6 +46,7 @@ const NewGameButton = glamorous.button({
     color: 'white',
     margin: '1em 0',
     padding: '1em',
+    textTransform: 'uppercase'
 })
 
 @connect(mapStateToProps, mapDispatchToProps)

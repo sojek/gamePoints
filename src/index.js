@@ -12,6 +12,9 @@ import App from './App'
 import { store } from './store'
 import registerServiceWorker from './registerServiceWorker'
 
+import 'normalize.css'
+import './styles/styles.scss'
+
 
 ReactDOM.render(
     <Provider store={store}>

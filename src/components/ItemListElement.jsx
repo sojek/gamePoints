@@ -9,12 +9,14 @@ export const ListElement = glamorous.li({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 23,
-    width: 120,
-    height: 120,
+    fontSize: 35,
+    color: 'white',
+    background: '#888888',
+    width: 150,
+    height: 150,
     margin: 5,
     border: "1px solid #383838",
-    cursor: "pointer"
+    cursor: "pointer",
 })
 
 export const Bonus = glamorous.div({
